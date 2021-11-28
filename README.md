@@ -4,4 +4,4 @@
 
 ## Dependencies
 
-- [adafruit/RTClib](https://github.com/adafruit/RTClib)
+- [JChristensen/DS3232RTC](https://github.com/JChristensen/DS3232RTC)
