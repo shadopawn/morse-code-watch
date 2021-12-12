@@ -11,6 +11,9 @@
 - [Tiny AVR Programmer Hookup](https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all)
 - [Software Serial on Attiny85](https://www.youtube.com/watch?v=9CX4i6rMXS8&ab_channel=TomDonnelly)
 
+## Code Snippets
+- https://github.com/arduino-libraries/RTCZero/issues/53
+
 ## Attiny85
 
 ![Attiny85 pinout](./images/attiny85_pinout.jpeg)
