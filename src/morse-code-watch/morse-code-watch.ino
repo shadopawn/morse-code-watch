@@ -1,6 +1,9 @@
-void setup() {
-  // put your setup code here, to run once:
+int vibrationMotorPin = 1;
+int touchSensorPin = 3;
 
+void setup() {
+  pinMode(vibrationMotorPin, OUTPUT);
+  pinMode(touchSensorPin, INPUT);
 }
 
 void loop() {
