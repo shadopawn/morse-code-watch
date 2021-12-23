@@ -6,18 +6,18 @@ void setup() {
   pinMode(touchSensorPin, INPUT);
 }
 
-bool canTrigger = true;
+int lastTouchedState = 0;
 
 void loop() {
   int touchSensorState = digitalRead(touchSensorPin);
-  
-  if (touchSensorState == HIGH && canTrigger)
+
+  if (touchSensorState != lastTouchedState)
   {
-    canTrigger = false;
-    // Do actions here
+    if (touchSensorState == HIGH)
+    {
+      // Do actions here
+    }
   }
-  else
-  {
-    canTrigger = true;
-  }
+
+  lastTouchedState = touchSensorState;
 }
