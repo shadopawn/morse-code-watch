@@ -6,7 +6,18 @@ void setup() {
   pinMode(touchSensorPin, INPUT);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+bool canTrigger = true;
 
+void loop() {
+  int touchSensorState = digitalRead(touchSensorPin);
+  
+  if (touchSensorState == HIGH && canTrigger)
+  {
+    canTrigger = false;
+    // Do actions here
+  }
+  else
+  {
+    canTrigger = true;
+  }
 }
