@@ -6,16 +6,21 @@ void setup() {
   pinMode(touchSensorPin, INPUT);
 }
 
+void loop() {
+
+}
+
 int lastTouchedState = 0;
 
-void loop() {
+void onTouched(void (*touchedAction)())
+{
   int touchSensorState = digitalRead(touchSensorPin);
 
   if (touchSensorState != lastTouchedState)
   {
     if (touchSensorState == HIGH)
     {
-      // Do actions here
+      touchedAction();
     }
   }
 
