@@ -16,13 +16,8 @@ void onTouched(void (*touchedAction)())
 {
   int touchSensorState = digitalRead(touchSensorPin);
 
-  if (touchSensorState != lastTouchedState)
-  {
-    if (touchSensorState == HIGH)
-    {
-      touchedAction();
-    }
-  }
+  if (touchSensorState != lastTouchedState && touchSensorState == HIGH)
+    touchedAction();
 
   lastTouchedState = touchSensorState;
 }
