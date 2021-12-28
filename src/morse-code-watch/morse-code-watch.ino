@@ -45,11 +45,9 @@ void vibrateMorseDigit(int digit)
 {
   if (digit >= 10) return;
 
-  char dotsAndDashes[5] = { morseDigits[digit] };
-
-  for (auto dotOrDash : dotsAndDashes)
+  for (auto dotOrDash : morseDigits[digit])
   {
-    (dotOrDash == ".") ? dot() : dash();
+    (dotOrDash == '-') ? dash() : dot();
     delay(betweenDotDashDelay);
   }
 }
