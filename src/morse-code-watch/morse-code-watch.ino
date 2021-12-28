@@ -9,6 +9,7 @@ void setup()
 
 void loop()
 {
+  onTouched(vibrateTestMorseDigit);
 }
 
 int lastTouchedState = 0;
@@ -21,6 +22,11 @@ void onTouched(void (*touchedAction)())
     touchedAction();
 
   lastTouchedState = touchSensorState;
+}
+
+void vibrateTestMorseDigit()
+{
+  vibrateMorseDigit(4);
 }
 
 int dotDuration = 250;
