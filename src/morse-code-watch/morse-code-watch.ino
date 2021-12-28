@@ -26,7 +26,7 @@ void onTouched(void (*touchedAction)())
 
 void vibrateTime()
 {
-    vibrateMinutes(54);
+    vibrateHour(9);
 }
 
 int dotDuration = 100;
@@ -46,14 +46,21 @@ char morseDigits[10][5] = {
     "---..",
     "----."};
 
+void vibrateHour(int hour)
+{
+    int tensPosition = getTensPosition(hour);
+    int onesPosition = getOnesPosition(hour);
+    if (tensPosition != 0)
+        vibrateDigitWithDelay(tensPosition);
+    vibrateDigitWithDelay(onesPosition);
+}
+
 void vibrateMinutes(int minutes)
 {
     int tensPosition = getTensPosition(minutes);
     int onesPosition = getOnesPosition(minutes);
-    vibrateMorseDigit(tensPosition);
-    delay(intraDigitDelay);
-    vibrateMorseDigit(onesPosition);
-    delay(intraDigitDelay);
+    vibrateDigitWithDelay(tensPosition);
+    vibrateDigitWithDelay(onesPosition);
 }
 
 int getTensPosition(int minutes)
@@ -64,6 +71,12 @@ int getTensPosition(int minutes)
 int getOnesPosition(int minutes)
 {
     return minutes % 10;
+}
+
+void vibrateDigitWithDelay(int digit)
+{
+    vibrateMorseDigit(digit);
+    delay(intraDigitDelay);
 }
 
 void vibrateMorseDigit(int digit)
