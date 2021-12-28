@@ -9,7 +9,7 @@ void setup()
 
 void loop()
 {
-    onTouched(vibrateTestMorseDigit);
+    onTouched(vibrateTime);
 }
 
 int lastTouchedState = 0;
@@ -24,9 +24,9 @@ void onTouched(void (*touchedAction)())
     lastTouchedState = touchSensorState;
 }
 
-void vibrateTestMorseDigit()
+void vibrateTime()
 {
-    vibrateMorseDigit(4);
+    vibrateMinutes(54);
 }
 
 int dotDuration = 100;
@@ -45,6 +45,26 @@ char morseDigits[10][5] = {
     "--...",
     "---..",
     "----."};
+
+void vibrateMinutes(int minutes)
+{
+    int tensPosition = getTensPosition(minutes);
+    int onesPosition = getOnesPosition(minutes);
+    vibrateMorseDigit(tensPosition);
+    delay(intraDigitDelay);
+    vibrateMorseDigit(onesPosition);
+    delay(intraDigitDelay);
+}
+
+int getTensPosition(int minutes)
+{
+    return floor(minutes / 10);
+}
+
+int getOnesPosition(int minutes)
+{
+    return minutes % 10;
+}
 
 void vibrateMorseDigit(int digit)
 {
