@@ -1,4 +1,4 @@
-int vibrationMotorPin = 1;
+int vibrationMotorPin = 4;
 int touchSensorPin = 3;
 
 void setup()
