@@ -24,12 +24,6 @@ void onTouched(void (*touchedAction)())
     lastTouchedState = touchSensorState;
 }
 
-void vibrateTime()
-{
-    vibrateHour(9);
-    vibrateMinutes(2);
-}
-
 int dotDuration = 100;
 int dashDuration = dotDuration * 3;
 int betweenDotDashDelay = dotDuration;
@@ -46,6 +40,12 @@ char morseDigits[10][5] = {
     "--...",
     "---..",
     "----."};
+
+void vibrateTime()
+{
+    vibrateHour(9);
+    vibrateMinutes(2);
+}
 
 void vibrateHour(int hour)
 {
