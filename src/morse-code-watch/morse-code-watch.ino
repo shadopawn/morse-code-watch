@@ -27,6 +27,7 @@ void onTouched(void (*touchedAction)())
 void vibrateTime()
 {
     vibrateHour(9);
+    vibrateMinutes(2);
 }
 
 int dotDuration = 100;
