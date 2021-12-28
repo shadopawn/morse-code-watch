@@ -44,7 +44,7 @@ char morseDigits[10][5] = {
   "-....",
   "--...",
   "---..",
-  "----." 
+  "----."
 };
 
 void vibrateMorseDigit(int digit)
@@ -58,7 +58,7 @@ void vibrateMorseDigit(int digit)
   }
 }
 
-void dot() 
+void dot()
 {
   vibrateForMilliseconds(dotDuration);
 }
