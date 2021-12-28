@@ -29,7 +29,7 @@ void vibrateTestMorseDigit()
   vibrateMorseDigit(4);
 }
 
-int dotDuration = 250;
+int dotDuration = 100;
 int dashDuration = dotDuration*3;
 int betweenDotDashDelay = dotDuration;
 int intraDigitDelay = dotDuration*3;
