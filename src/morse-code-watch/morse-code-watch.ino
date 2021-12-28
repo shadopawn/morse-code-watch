@@ -43,8 +43,8 @@ char morseDigits[10][5] = {
 
 void vibrateTime()
 {
-    vibrateHour(9);
-    vibrateMinutes(2);
+    vibrateHour(11);
+    vibrateMinutes(31);
 }
 
 void vibrateHour(int hour)
