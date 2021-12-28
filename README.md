@@ -12,7 +12,9 @@
 - [Software Serial on Attiny85](https://www.youtube.com/watch?v=9CX4i6rMXS8&ab_channel=TomDonnelly)
 
 ## Code Snippets
-- https://github.com/arduino-libraries/RTCZero/issues/53
+- Set RTC to compile time
+    - https://github.com/arduino-libraries/RTCZero/issues/53
+    - https://codebender.cc/sketch:84760#RTC%20SET%20TIME%20TO%20CPU%20TIME.ino
 
 ## Attiny85
 
