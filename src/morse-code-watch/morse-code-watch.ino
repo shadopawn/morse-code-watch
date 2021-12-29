@@ -64,14 +64,14 @@ void vibrateMinutes(int minutes)
     vibrateDigitWithDelay(onesPosition);
 }
 
-int getTensPosition(int minutes)
+int getTensPosition(int time)
 {
-    return floor(minutes / 10);
+    return floor(time / 10);
 }
 
-int getOnesPosition(int minutes)
+int getOnesPosition(int time)
 {
-    return minutes % 10;
+    return time % 10;
 }
 
 void vibrateDigitWithDelay(int digit)
