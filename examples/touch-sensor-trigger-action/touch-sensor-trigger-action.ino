@@ -9,12 +9,12 @@ void setup()
 
 void loop()
 {
-  onTouched(vibrateForOneSecond);
+  onTouch(vibrateForOneSecond);
 }
 
 int lastTouchedState = 0;
 
-void onTouched(void (*touchedAction)())
+void onTouch(void (*touchedAction)())
 {
   int touchSensorState = digitalRead(touchSensorPin);
 
