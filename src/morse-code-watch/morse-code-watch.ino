@@ -8,9 +8,9 @@ void setup()
     pinMode(vibrationMotorPin, OUTPUT);
     pinMode(touchSensorPin, INPUT);
 
-    //24hour, minutes, seconds, day, month, year 
+    // 24hour, minutes, seconds, day, month, year
     setTime(22, 34, 00, 31, 12, 2021);
-    RTC.set(now());  
+    RTC.set(now());
     setSyncProvider(RTC.get);
 }
 
