@@ -1,3 +1,5 @@
+#include <DS3232RTC.h>
+
 int vibrationMotorPin = 4;
 int touchSensorPin = 3;
 
@@ -5,6 +7,11 @@ void setup()
 {
     pinMode(vibrationMotorPin, OUTPUT);
     pinMode(touchSensorPin, INPUT);
+
+    //24hour, minutes, seconds, day, month, year 
+    setTime(22, 34, 00, 31, 12, 2021);
+    RTC.set(now());  
+    setSyncProvider(RTC.get);
 }
 
 void loop()
@@ -43,8 +50,8 @@ char morseDigits[10][5] = {
 
 void vibrateTime()
 {
-    vibrateHour(11);
-    vibrateMinutes(31);
+    vibrateHour(hourFormat12());
+    vibrateMinutes(minute());
 }
 
 void vibrateHour(int hour)
