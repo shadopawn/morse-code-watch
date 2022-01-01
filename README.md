@@ -13,6 +13,7 @@
 
 ## Code Snippets
 - Set RTC to compile time
+    - https://github.com/JChristensen/DS3232RTC/blob/6ef565851c0b1b3c5d0d09a4da19b868906cd01a/examples/alarm_ex1/alarm_ex1.ino#L74
     - https://github.com/arduino-libraries/RTCZero/issues/53
     - https://codebender.cc/sketch:84760#RTC%20SET%20TIME%20TO%20CPU%20TIME.ino
 
