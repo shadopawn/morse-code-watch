@@ -9,7 +9,7 @@ void setup()
     pinMode(touchSensorPin, INPUT);
 
     // 24hour, minutes, seconds, day, month, year
-    setTime(22, 34, 00, 31, 12, 2021);
+    setTime(9, 41, 00, 1, 1, 2022);
     RTC.set(now());
     setSyncProvider(RTC.get);
 }
