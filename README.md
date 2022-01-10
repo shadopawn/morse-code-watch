@@ -4,6 +4,7 @@
 
 ## Dependencies
 - [JChristensen/DS3232RTC](https://github.com/JChristensen/DS3232RTC)
+- [PaulStoffregen/Time](https://github.com/PaulStoffregen/Time)
 
 ## Setup Guides
 - [Add Attiny85 board to Arduino IDE](http://highlowtech.org/?p=1695)
