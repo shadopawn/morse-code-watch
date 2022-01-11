@@ -19,6 +19,7 @@
 - Put Attiny85 into low power mode
     - https://electronics.stackexchange.com/questions/349496/how-to-achieve-low-power-consumption-with-attiny85
     - https://community.element14.com/members-area/personalblogs/b/blog/posts/a-low-power-attiny85-system
+    - http://www.technoblogy.com/show?KX0
 
 ## Attiny85
 
