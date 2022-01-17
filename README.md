@@ -20,6 +20,8 @@
     - [How to achieve low power consumption with Attiny85](https://electronics.stackexchange.com/questions/349496/how-to-achieve-low-power-consumption-with-attiny85)
     - [Attiny Low Power](http://www.technoblogy.com/show?KX0)
     - [A Low Power Attiny85 System](https://community.element14.com/members-area/personalblogs/b/blog/posts/a-low-power-attiny85-system)
+- Get internal VCC of Attiny85
+    - [ArduinoSystemStatus / SystemStatus.cpp](https://github.com/cano64/ArduinoSystemStatus/blob/master/SystemStatus.cpp)
 
 ## Attiny85
 
