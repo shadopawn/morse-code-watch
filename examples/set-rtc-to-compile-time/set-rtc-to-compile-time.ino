@@ -52,24 +52,22 @@ void printDigits(int digits)
 
 time_t compiledTime()
 {
-    char s_month[5];
-    int year, day;
-    int hour, minute, second;
-    tmElements_t timeElements;
-    static const char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
-    sscanf(__DATE__, "%s %d %d", s_month, &day, &year);
-    // sscanf(time, "%2hhd %*c %2hhd %*c %2hhd", &t.Hour, &t.Minute, &t.Second);
-    sscanf(__TIME__, "%2d %*c %2d %*c %2d", &hour, &minute, &second);
-    // Find where is s_month in month_names. Deduce month value.
-    timeElements.Month = (strstr(month_names, s_month) - month_names) / 3 + 1;
-    timeElements.Day = day;
-    // year can be given as '2010' or '10'. It is converted to years since 1970
-    if (year > 99)
-        timeElements.Year = year - 1970;
-    else
-        timeElements.Year = year + 50;
-    timeElements.Hour = hour;
-    timeElements.Minute = minute;
-    timeElements.Second = second;
-    return makeTime(timeElements);
+    const time_t FUDGE(10); // fudge factor to allow for upload time, etc. (seconds, YMMV)
+    const char *compDate = __DATE__, *compTime = __TIME__, *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
+    char compMon[4], *m;
+
+    strncpy(compMon, compDate, 3);
+    compMon[3] = '\0';
+    m = strstr(months, compMon);
+
+    tmElements_t tm;
+    tm.Month = ((m - months) / 3 + 1);
+    tm.Day = atoi(compDate + 4);
+    tm.Year = atoi(compDate + 7) - 1970;
+    tm.Hour = atoi(compTime);
+    tm.Minute = atoi(compTime + 3);
+    tm.Second = atoi(compTime + 6);
+
+    time_t t = makeTime(tm);
+    return t + FUDGE;
 }
