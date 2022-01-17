@@ -16,6 +16,36 @@ void setup()
     digitalClockDisplay();
 }
 
+time_t compiledTime()
+{
+    const time_t FUDGE(10); // fudge factor to allow for upload time, etc. (seconds, YMMV)
+    const char *compiledDate = __DATE__, *compiledTime = __TIME__;
+
+    tmElements_t tm;
+    tm.Month = compiledMonthNumber();
+    tm.Day = atoi(compiledDate + 4);
+    tm.Year = atoi(compiledDate + 7) - 1970;
+    tm.Hour = atoi(compiledTime);
+    tm.Minute = atoi(compiledTime + 3);
+    tm.Second = atoi(compiledTime + 6);
+
+    time_t t = makeTime(tm);
+    return t + FUDGE;
+}
+
+int compiledMonthNumber()
+{
+    const char *compiledDate = __DATE__;
+    const char *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
+    char compiledMonth[4], *month;
+
+    strncpy(compiledMonth, compiledDate, 3);
+    compiledMonth[3] = '\0';
+    month = strstr(months, compiledMonth);
+
+    return ((month - months) / 3 + 1);
+}
+
 void loop() {}
 
 void digitalClockDisplay()
@@ -48,34 +78,4 @@ void printDigits(int digits)
     if (digits < 10)
         Serial.print('0');
     Serial.print(digits);
-}
-
-time_t compiledTime()
-{
-    const time_t FUDGE(10); // fudge factor to allow for upload time, etc. (seconds, YMMV)
-    const char *compiledDate = __DATE__, *compiledTime = __TIME__;
-
-    tmElements_t tm;
-    tm.Month = compiledMonthNumber();
-    tm.Day = atoi(compiledDate + 4);
-    tm.Year = atoi(compiledDate + 7) - 1970;
-    tm.Hour = atoi(compiledTime);
-    tm.Minute = atoi(compiledTime + 3);
-    tm.Second = atoi(compiledTime + 6);
-
-    time_t t = makeTime(tm);
-    return t + FUDGE;
-}
-
-int compiledMonthNumber()
-{
-    const char *compiledDate = __DATE__;
-    const char *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
-    char compiledMonth[4], *month;
-
-    strncpy(compiledMonth, compiledDate, 3);
-    compiledMonth[3] = '\0';
-    month = strstr(months, compiledMonth);
-
-    return ((month - months) / 3 + 1);
 }

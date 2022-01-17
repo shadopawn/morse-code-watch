@@ -9,9 +9,9 @@ void setup()
     pinMode(touchSensorPin, INPUT);
 
     // 24hour, minutes, seconds, day, month, year
-    setTime(9, 41, 00, 1, 1, 2022);
-    RTC.set(now());
-    setSyncProvider(RTC.get);
+    // setTime(9, 41, 00, 1, 1, 2022);
+    // RTC.set(now());
+    // setSyncProvider(RTC.get);
 }
 
 void loop()
@@ -50,6 +50,8 @@ char morseDigits[10][5] = {
 
 void vibrateTime()
 {
+    setSyncProvider(RTC.get);
+
     vibrateHour(hourFormat12());
     vibrateMinutes(minute());
 }
