@@ -53,20 +53,20 @@ void printDigits(int digits)
 time_t compiledTime()
 {
     const time_t FUDGE(10); // fudge factor to allow for upload time, etc. (seconds, YMMV)
-    const char *compDate = __DATE__, *compTime = __TIME__, *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
+    const char *compiledDate = __DATE__, *compiledTime = __TIME__, *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
     char compMon[4], *m;
 
-    strncpy(compMon, compDate, 3);
+    strncpy(compMon, compiledDate, 3);
     compMon[3] = '\0';
     m = strstr(months, compMon);
 
     tmElements_t tm;
     tm.Month = ((m - months) / 3 + 1);
-    tm.Day = atoi(compDate + 4);
-    tm.Year = atoi(compDate + 7) - 1970;
-    tm.Hour = atoi(compTime);
-    tm.Minute = atoi(compTime + 3);
-    tm.Second = atoi(compTime + 6);
+    tm.Day = atoi(compiledDate + 4);
+    tm.Year = atoi(compiledDate + 7) - 1970;
+    tm.Hour = atoi(compiledTime);
+    tm.Minute = atoi(compiledTime + 3);
+    tm.Second = atoi(compiledTime + 6);
 
     time_t t = makeTime(tm);
     return t + FUDGE;
