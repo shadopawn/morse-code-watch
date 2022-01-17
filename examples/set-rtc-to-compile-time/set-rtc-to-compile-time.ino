@@ -54,11 +54,11 @@ time_t compiledTime()
 {
     const time_t FUDGE(10); // fudge factor to allow for upload time, etc. (seconds, YMMV)
     const char *compiledDate = __DATE__, *compiledTime = __TIME__, *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
-    char compMon[4], *m;
+    char compiledMonth[4], *m;
 
-    strncpy(compMon, compiledDate, 3);
-    compMon[3] = '\0';
-    m = strstr(months, compMon);
+    strncpy(compiledMonth, compiledDate, 3);
+    compiledMonth[3] = '\0';
+    m = strstr(months, compiledMonth);
 
     tmElements_t tm;
     tm.Month = ((m - months) / 3 + 1);
