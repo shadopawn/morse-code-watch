@@ -20,9 +20,19 @@ void loop() {}
 
 void digitalClockDisplay()
 {
+    printTime();
+    printDate();
+}
+
+void printTime()
+{
     Serial.print(hourFormat12());
     printDigits(minute());
     printDigits(second());
+}
+
+void printDate()
+{
     Serial.print(' ');
     Serial.print(day());
     Serial.print(' ');
