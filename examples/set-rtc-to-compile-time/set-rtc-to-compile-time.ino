@@ -46,8 +46,6 @@ int compiledMonthNumber()
     return ((month - months) / 3 + 1);
 }
 
-void loop() {}
-
 void digitalClockDisplay()
 {
     printTime();
@@ -79,3 +77,5 @@ void printDigits(int digits)
         Serial.print('0');
     Serial.print(digits);
 }
+
+void loop() {}
