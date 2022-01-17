@@ -54,14 +54,14 @@ time_t compiledTime()
 {
     const time_t FUDGE(10); // fudge factor to allow for upload time, etc. (seconds, YMMV)
     const char *compiledDate = __DATE__, *compiledTime = __TIME__, *months = "JanFebMarAprMayJunJulAugSepOctNovDec";
-    char compiledMonth[4], *m;
+    char compiledMonth[4], *month;
 
     strncpy(compiledMonth, compiledDate, 3);
     compiledMonth[3] = '\0';
-    m = strstr(months, compiledMonth);
+    month = strstr(months, compiledMonth);
 
     tmElements_t tm;
-    tm.Month = ((m - months) / 3 + 1);
+    tm.Month = ((month - months) / 3 + 1);
     tm.Day = atoi(compiledDate + 4);
     tm.Year = atoi(compiledDate + 7) - 1970;
     tm.Hour = atoi(compiledTime);
