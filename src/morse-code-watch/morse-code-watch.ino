@@ -1,30 +1,13 @@
 #include <DS3232RTC.h>
 
 int vibrationMotorPin = 4;
-int touchSensorPin = 3;
 
 void setup()
 {
     pinMode(vibrationMotorPin, OUTPUT);
-    pinMode(touchSensorPin, INPUT);
 }
 
-void loop()
-{
-    onTouch(vibrateTime);
-}
-
-int lastTouchedState = 0;
-
-void onTouch(void (*touchedAction)())
-{
-    int touchSensorState = digitalRead(touchSensorPin);
-
-    if (touchSensorState != lastTouchedState && touchSensorState == HIGH)
-        touchedAction();
-
-    lastTouchedState = touchSensorState;
-}
+void loop() {}
 
 int dotDuration = 100;
 int dashDuration = dotDuration * 3;
