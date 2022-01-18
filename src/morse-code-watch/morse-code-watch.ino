@@ -5,6 +5,8 @@ int vibrationMotorPin = 4;
 void setup()
 {
     pinMode(vibrationMotorPin, OUTPUT);
+
+    syncAndVibrateTime();
 }
 
 void loop() {}
