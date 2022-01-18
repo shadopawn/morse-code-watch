@@ -43,10 +43,14 @@ char morseDigits[10][5] = {
     "---..",
     "----."};
 
-void vibrateTime()
+void syncAndVibrateTime()
 {
     setSyncProvider(RTC.get);
+    vibrateTime();
+}
 
+void vibrateTime()
+{
     vibrateHour(hourFormat12());
     vibrateMinutes(minute());
 }
