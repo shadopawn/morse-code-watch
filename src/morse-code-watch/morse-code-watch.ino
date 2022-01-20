@@ -1,6 +1,6 @@
 #include <DS3232RTC.h>
 
-int vibrationMotorPin = 4;
+const int vibrationMotorPin = 4;
 
 void setup()
 {
@@ -11,12 +11,12 @@ void setup()
 
 void loop() {}
 
-int dotDuration = 100;
-int dashDuration = dotDuration * 3;
-int betweenDotDashDelay = dotDuration;
-int intraDigitDelay = dotDuration * 3;
+const int dotDuration = 100;
+const int dashDuration = dotDuration * 3;
+const int betweenDotDashDelay = dotDuration;
+const int intraDigitDelay = dotDuration * 3;
 
-char morseDigits[10][5] = {
+const char morseDigits[10][5] = {
     "-----",
     ".----",
     "..---",
