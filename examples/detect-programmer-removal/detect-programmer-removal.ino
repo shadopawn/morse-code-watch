@@ -16,8 +16,9 @@ void setup()
     
     if (programmerWasAttached){
         Serial.println("Programmer Removed");
-        Serial.print("Time programmer was attached ");
-        Serial.println(millis());
+        Serial.print("Programmer was attached for ");
+        Serial.print(millis());
+        Serial.print("ms");
     }
 }
 
