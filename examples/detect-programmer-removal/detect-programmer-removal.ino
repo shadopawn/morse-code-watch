@@ -20,7 +20,7 @@ void setup()
         Serial.println("Programmer Removed");
         Serial.print("Programmer was attached for ");
         Serial.print(millis());
-        Serial.print("ms");
+        Serial.println("ms");
     }
     else
     {
