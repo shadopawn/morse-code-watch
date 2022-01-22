@@ -22,6 +22,10 @@ void setup()
         Serial.print(millis());
         Serial.print("ms");
     }
+    else
+    {
+        Serial.println("Programmer was not attached");
+    }
 }
 
 void loop()
