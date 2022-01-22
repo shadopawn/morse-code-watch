@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 
-#define RX 3 // PB3, Pin 2
-#define TX 4 // PB4, Pin 3
+#define RX 3 // PB3, Physical Pin 2
+#define TX 4 // PB4, Physical Pin 3
 
 SoftwareSerial Serial(RX, TX);
 
