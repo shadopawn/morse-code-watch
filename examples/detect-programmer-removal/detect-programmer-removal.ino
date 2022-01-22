@@ -11,6 +11,8 @@ void setup()
 
     Serial.println("Begin detecting if programmer is attached");
 
+    printVoltage();
+
     bool programmerWasAttached = programmerAttached();
     while (programmerAttached());
     
@@ -29,6 +31,13 @@ void loop()
 bool programmerAttached()
 {
     return internalVoltage() > 4000;
+}
+
+void printVoltage()
+{
+    Serial.print("Internal voltage ");
+    Serial.print(internalVoltage());
+    Serial.println("mV");
 }
 
 int internalVoltage()
