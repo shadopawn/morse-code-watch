@@ -18,6 +18,7 @@ void loop()
 
 int internalVoltage()
 {
+    // requires the ADC be enabled
     // reads internal 1V1 reference against VCC
     ADMUX = _BV(MUX3) | _BV(MUX2);
     delay(2);            // Wait for Vref to settle
