@@ -85,15 +85,15 @@ time_t compiledTime()
 {
     const char *compiledDate = __DATE__, *compiledTime = __TIME__;
 
-    tmElements_t tm;
-    tm.Month = compiledMonthNumber();
-    tm.Day = atoi(compiledDate + 4);
-    tm.Year = atoi(compiledDate + 7) - 1970;
-    tm.Hour = atoi(compiledTime);
-    tm.Minute = atoi(compiledTime + 3);
-    tm.Second = atoi(compiledTime + 6);
+    tmElements_t timeElements;
+    timeElements.Month = compiledMonthNumber();
+    timeElements.Day = atoi(compiledDate + 4);
+    timeElements.Year = atoi(compiledDate + 7) - 1970;
+    timeElements.Hour = atoi(compiledTime);
+    timeElements.Minute = atoi(compiledTime + 3);
+    timeElements.Second = atoi(compiledTime + 6);
 
-    time_t time = makeTime(tm);
+    time_t time = makeTime(timeElements);
     return time + compiledTimeAdjustment();
 }
 
