@@ -13,8 +13,9 @@ void setup()
 
     bool programmerWasAttached = programmerAttached();
     while (programmerAttached());
-    
-    if (programmerWasAttached){
+
+    if (programmerWasAttached)
+    {
 
         Serial.println("Programmer Removed");
         Serial.print("Programmer was attached for ");
