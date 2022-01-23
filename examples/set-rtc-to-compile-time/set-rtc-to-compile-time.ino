@@ -93,8 +93,8 @@ time_t compiledTime()
     tm.Minute = atoi(compiledTime + 3);
     tm.Second = atoi(compiledTime + 6);
 
-    time_t t = makeTime(tm);
-    return t + compiledTimeAdjustment();
+    time_t time = makeTime(tm);
+    return time + compiledTimeAdjustment();
 }
 
 int compiledMonthNumber()
