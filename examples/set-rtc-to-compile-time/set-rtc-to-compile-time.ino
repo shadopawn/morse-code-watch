@@ -1,8 +1,73 @@
 #include <DS3232RTC.h>
 
+#include <SoftwareSerial.h>
+
+#define RX 3 // PB3, Physical Pin 2
+#define TX 4 // PB4, Physical Pin 3
+
+SoftwareSerial Serial(RX, TX);
+
 void setup()
 {
     Serial.begin(9600);
+
+    bool programmerWasAttached = programmerAttached();
+    while (programmerAttached());
+    
+    if (programmerWasAttached){
+
+        Serial.println("Programmer Removed");
+        Serial.print("Programmer was attached for ");
+        Serial.print(millis());
+        Serial.println("ms");
+
+        delay(1000);
+        setAndPrintTime();
+    }
+    else
+    {
+        Serial.println("Programmer was not attached");
+    }
+}
+
+void loop()
+{
+    digitalClockDisplay();
+    delay(1000);
+}
+
+bool programmerAttached()
+{
+    return internalVoltage() > 4000;
+}
+
+void printVoltage()
+{
+    Serial.print("Internal voltage ");
+    Serial.print(internalVoltage());
+    Serial.println("mV");
+}
+
+int internalVoltage()
+{
+    // reads internal 1V1 reference against VCC
+    ADMUX = _BV(MUX3) | _BV(MUX2);
+    delay(2);            // Wait for Vref to settle
+    ADCSRA |= _BV(ADSC); // Convert
+    while (bit_is_set(ADCSRA, ADSC));
+    uint8_t low = ADCL;
+    unsigned int val = (ADCH << 8) | low;
+    // discard previous result
+    ADCSRA |= _BV(ADSC); // Convert
+    while (bit_is_set(ADCSRA, ADSC));
+    low = ADCL;
+    val = (ADCH << 8) | low;
+    // returns voltage in mV
+    return ((long)1024 * 1100) / val;
+}
+
+void setAndPrintTime()
+{
     Serial.println("Setting time");
 
     RTC.set(compiledTime());
@@ -18,7 +83,6 @@ void setup()
 
 time_t compiledTime()
 {
-    const time_t FUDGE(10); // fudge factor to allow for upload time, etc. (seconds, YMMV)
     const char *compiledDate = __DATE__, *compiledTime = __TIME__;
 
     tmElements_t tm;
@@ -30,7 +94,7 @@ time_t compiledTime()
     tm.Second = atoi(compiledTime + 6);
 
     time_t t = makeTime(tm);
-    return t + FUDGE;
+    return t + compiledTimeAdjustment();
 }
 
 int compiledMonthNumber()
@@ -44,6 +108,13 @@ int compiledMonthNumber()
     month = strstr(months, compiledMonth);
 
     return ((month - months) / 3 + 1);
+}
+
+int compiledTimeAdjustment()
+{
+    const time_t FUDGE(20); // fudge factor to allow for upload time, etc. (seconds, YMMV)
+    int currentRunningTime = millis()/1000;
+    return FUDGE + currentRunningTime;
 }
 
 void digitalClockDisplay()
@@ -77,5 +148,3 @@ void printDigits(int digits)
         Serial.print('0');
     Serial.print(digits);
 }
-
-void loop() {}
