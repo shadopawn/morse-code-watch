@@ -26,3 +26,7 @@
 ## Attiny85
 
 ![Attiny85 pinout](./images/attiny85_pinout.jpeg)
+
+## Morse Code
+
+![Morse Code](./images/international_morse_code.jpg)
