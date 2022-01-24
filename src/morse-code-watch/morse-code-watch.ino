@@ -82,8 +82,6 @@ int compiledTimeAdjustment()
     return FUDGE + currentSecondsRunning;
 }
 
-void loop() {}
-
 const int dotDuration = 100;
 const int dashDuration = dotDuration * 3;
 const int betweenDotDashDelay = dotDuration;
@@ -174,3 +172,5 @@ void vibrateForMilliseconds(int milliseconds)
     delay(milliseconds);
     digitalWrite(vibrationMotorPin, LOW);
 }
+
+void loop() {}
