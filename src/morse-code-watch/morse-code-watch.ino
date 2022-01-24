@@ -78,8 +78,8 @@ int compiledMonthNumber()
 int compiledTimeAdjustment()
 {
     const time_t FUDGE(20); // fudge factor to allow for upload time, etc. (seconds, YMMV)
-    int currentRunningTime = millis()/1000;
-    return FUDGE + currentRunningTime;
+    int currentSecondsRunning = millis() / 1000;
+    return FUDGE + currentSecondsRunning;
 }
 
 void loop() {}
