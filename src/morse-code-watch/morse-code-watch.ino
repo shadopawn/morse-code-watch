@@ -4,13 +4,20 @@
 
 const int vibrationMotorPin = 4;
 
+const int rtcPowerPin = 3;
+
 void setup()
 {
     pinMode(vibrationMotorPin, OUTPUT);
 
+    pinMode(rtcPowerPin, OUTPUT);
+    digitalWrite(rtcPowerPin, HIGH);
+
     setTimeIfProgrammerAttached();
 
     syncAndVibrateTime();
+
+    digitalWrite(rtcPowerPin, LOW);
     
     sleep();
 }
