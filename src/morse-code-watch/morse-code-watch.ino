@@ -1,5 +1,7 @@
 #include <DS3232RTC.h>
 
+#include <avr/sleep.h>
+
 const int vibrationMotorPin = 4;
 
 void setup()
@@ -9,6 +11,8 @@ void setup()
     setTimeIfProgrammerAttached();
 
     syncAndVibrateTime();
+    
+    sleep();
 }
 
 void setTimeIfProgrammerAttached()
@@ -171,6 +175,29 @@ void vibrateForMilliseconds(int milliseconds)
     digitalWrite(vibrationMotorPin, HIGH);
     delay(milliseconds);
     digitalWrite(vibrationMotorPin, LOW);
+}
+
+void sleep()
+{
+    applySleepSettings();
+    enterSleep();
+}
+
+void applySleepSettings()
+{
+    disableAdc();
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+}
+
+void disableAdc()
+{
+    (ADCSRA &= ~(1<<ADEN));
+}
+
+void enterSleep()
+{
+    sleep_enable();
+    sleep_cpu();
 }
 
 void loop() {}
