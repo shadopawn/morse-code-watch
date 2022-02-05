@@ -2,6 +2,8 @@
 
 #include <avr/sleep.h>
 
+#include "vibration_motor.h"
+
 const int vibrationMotorPin = 4;
 
 const int rtcPowerPin = 3;
@@ -92,6 +94,8 @@ int compiledTimeAdjustment()
     int currentSecondsRunning = millis() / 1000;
     return FUDGE + currentSecondsRunning;
 }
+
+VibrationMotor vibrationMotor(vibrationMotorPin);
 
 const int dotDuration = 100;
 const int dashDuration = dotDuration * 3;
