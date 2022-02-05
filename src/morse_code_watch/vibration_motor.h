@@ -13,5 +13,5 @@ class VibrationMotor: public MorseOutput {
         byte pin;
         int dotDuration = 100;
         int dashDuration = dotDuration * 3;
-        void vibrateForMilliseconds(int milliseconds);      
+        void vibrateForMilliseconds(int milliseconds);
 };
