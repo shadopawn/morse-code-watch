@@ -9,4 +9,5 @@ class ProgrammerStatus
     private:
         int voltageThreshold;
         int internalVoltage();
+        unsigned int unscaledVoltageReading();
 };
