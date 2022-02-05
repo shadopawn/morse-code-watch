@@ -1,3 +1,5 @@
+#pragma once
+
 class MorseOutput {
     public:
         virtual void setTiming(int dotDuration) = 0;
