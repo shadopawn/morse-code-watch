@@ -3,15 +3,15 @@
 #include "rtc_initializer.h"
 #include "attiny_sleep.h"
 
-const int vibrationMotorPin = 4;
 const int rtcPowerPin = 3;
-
-VibrationMotor vibrationMotor(vibrationMotorPin);
-LowPowerRtc lowPowerRtc(rtcPowerPin);
-MorseClock morseClock(&vibrationMotor, &lowPowerRtc);
+const int vibrationMotorPin = 4;
 
 ProgrammerStatus programmerStatus;
+LowPowerRtc lowPowerRtc(rtcPowerPin);
 RtcInitializer rtcInitializer(&programmerStatus, &lowPowerRtc);
+
+VibrationMotor vibrationMotor(vibrationMotorPin);
+MorseClock morseClock(&vibrationMotor, &lowPowerRtc);
 
 AttinySleep attiny;
 
