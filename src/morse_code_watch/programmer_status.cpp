@@ -18,7 +18,7 @@ int ProgrammerStatus::internalVoltage()
     unscaledVoltageReading();
     // discard previous result
     unsigned int val = unscaledVoltageReading();
-    // returns voltage in mV
+    // return voltage in mV
     return ((long)1024 * 1100) / val;
 }
 
