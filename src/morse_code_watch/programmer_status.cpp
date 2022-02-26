@@ -17,9 +17,9 @@ int ProgrammerStatus::internalVoltage()
     delay(2); // Wait for Vref to settle
     unscaledVoltageReading();
     // discard previous result
-    unsigned int val = unscaledVoltageReading();
+    unsigned int reading = unscaledVoltageReading();
     // return voltage in mV
-    return ((long)1024 * 1100) / val;
+    return ((long)1024 * 1100) / reading;
 }
 
 unsigned int ProgrammerStatus::unscaledVoltageReading()
