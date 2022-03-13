@@ -14,7 +14,7 @@ void AttinySleep::applySleepSettings()
 
 void AttinySleep::disableAdc()
 {
-    (ADCSRA &= ~(1<<ADEN));
+    (ADCSRA &= ~(1 << ADEN));
 }
 
 void AttinySleep::enterSleep()
