@@ -28,4 +28,4 @@ unsigned int ProgrammerStatus::unscaledVoltageReading()
     while (bit_is_set(ADCSRA, ADSC));
     uint8_t low = ADCL;
     return (ADCH << 8) | low;
-} 
+}
