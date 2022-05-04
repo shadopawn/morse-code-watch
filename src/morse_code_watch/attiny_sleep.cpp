@@ -1,23 +1,23 @@
 #include "attiny_sleep.h"
 
-void AttinySleep::sleep()
+void ATtinySleep::sleep()
 {
     applySleepSettings();
     enterSleep();
 }
 
-void AttinySleep::applySleepSettings()
+void ATtinySleep::applySleepSettings()
 {
     disableAdc();
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 }
 
-void AttinySleep::disableAdc()
+void ATtinySleep::disableAdc()
 {
     (ADCSRA &= ~(1 << ADEN));
 }
 
-void AttinySleep::enterSleep()
+void ATtinySleep::enterSleep()
 {
     sleep_enable();
     sleep_cpu();

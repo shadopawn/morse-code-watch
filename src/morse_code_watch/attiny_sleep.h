@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <avr/sleep.h>
 
-class AttinySleep
+class ATtinySleep
 {
     public:
         void sleep();

@@ -13,7 +13,7 @@ RtcInitializer rtcInitializer(&programmerStatus, &lowPowerRtc);
 VibrationMotor vibrationMotor(vibrationMotorPin);
 MorseClock morseClock(&vibrationMotor, &lowPowerRtc);
 
-AttinySleep attiny;
+ATtinySleep attiny;
 
 void setup()
 {
