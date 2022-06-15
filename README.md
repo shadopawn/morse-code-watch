@@ -11,6 +11,15 @@
 
 The `Morse Code Watch` is quite simply a watch that tells you the time in morse code. Touch the top of the watch and it will vibrate out the current time in Morse code. 
 
+## Block Diagram
+```mermaid
+flowchart TB
+    ATtiny85 <--> RTC(Real Time Clock)
+    B(Battery) --> ATtiny85
+    CS(Capacitive Sensor) --> ATtiny85
+    ATtiny85 --> VM(Vibration Motor) 
+```
+
 ## Dependencies
 
 The software for this project only has one explicit dependency [JChristensen/DS3232RTC](https://github.com/JChristensen/DS3232RTC)
