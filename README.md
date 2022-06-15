@@ -12,8 +12,11 @@
 The `Morse Code Watch` is quite simply a watch that tells you the time in morse code. Touch the top of the watch and it will vibrate out the current time in Morse code. 
 
 ## Dependencies
-- [JChristensen/DS3232RTC](https://github.com/JChristensen/DS3232RTC)
-- [PaulStoffregen/Time](https://github.com/PaulStoffregen/Time)
+
+The software for this project only has one explicit dependency [JChristensen/DS3232RTC](https://github.com/JChristensen/DS3232RTC)
+implicitly the `DS3232RTC` library written by *JChristensen* includes a time library it was designed to work with [PaulStoffregen/Time](https://github.com/PaulStoffregen/Time).
+
+This dependency can be added Arduino's library manager follow this [guide](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries).
 
 ## Setup Guides
 - [Add Attiny85 board to Arduino IDE](http://highlowtech.org/?p=1695)
