@@ -9,7 +9,7 @@
 ## Setup Guides
 - [Add Attiny85 board to Arduino IDE](http://highlowtech.org/?p=1695)
 - [Tiny AVR Programmer Hookup](https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all)
-- [Software Serial on Attiny85](https://www.youtube.com/watch?v=9CX4i6rMXS8&ab_channel=TomDonnelly)
+- [Software Serial on Attiny85](https://jloh02.github.io/projects/connecting-attiny85-serial-monitor/)
 
 ## Attiny85
 
