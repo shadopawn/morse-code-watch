@@ -14,10 +14,10 @@ The `Morse Code Watch` is quite simply a watch that tells you the time in morse 
 ## Block Diagram
 ```mermaid
 flowchart TB
-    ATtiny85 <--> RTC(Real Time Clock)
-    B(Battery) --> ATtiny85
-    CS(Capacitive Sensor) --> ATtiny85
-    ATtiny85 --> VM(Vibration Motor) 
+    μController <--> RTC(Real Time Clock)
+    B(Battery) --> μController
+    CS(Capacitive Sensor) --> μController
+    μController --> VM(Vibration Motor)
 ```
 
 ## Dependencies
