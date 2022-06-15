@@ -9,7 +9,15 @@
 
 # Morse Code Watch
 
-The `Morse Code Watch` is quite simply a watch that tells you the time in morse code. Touch the top of the watch and it will vibrate out the current time in Morse code. 
+The `Morse Code Watch` is quite simply a watch that tells you the time in morse code. Touch the top of the watch and it will vibrate out the current time in Morse code.
+
+<p align="center">
+    <img width="100%" src="./images/morse_code_watch_assembled.jpg" />
+    <img width="60%" src="./images/morse_code_watch_vibrating.gif" />
+</p>
+
+![](./images/morse_code_watch_3d_top.png) ![](./images/morse_code_watch_bottom.png)
+
 
 ## Block Diagram
 ```mermaid
