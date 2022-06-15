@@ -9,7 +9,7 @@
 
 # Morse Code Watch
 
-[Design Notes](https://docs.google.com/document/d/19emSS7PLROB8-E7uNJGMzSCD_NhitTL9K84vjGpF9SU/edit)
+The `Morse Code Watch` is quite simply a watch that tells you the time in morse code. Touch the top of the watch and it will vibrate out the current time in Morse code. 
 
 ## Dependencies
 - [JChristensen/DS3232RTC](https://github.com/JChristensen/DS3232RTC)
