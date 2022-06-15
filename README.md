@@ -1,3 +1,12 @@
+```
+                                                                          
+                                                                          
+  ______   ______       ______       ______               ______   ______ 
+ /_____/  /_____/      /_____/      /_____/              /_____/  /_____/ 
+                                /\           /\      /\                   
+                                \/           \/      \/                   
+```
+
 # Morse Code Watch
 
 [Design Notes](https://docs.google.com/document/d/19emSS7PLROB8-E7uNJGMzSCD_NhitTL9K84vjGpF9SU/edit)
