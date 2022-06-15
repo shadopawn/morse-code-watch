@@ -16,7 +16,18 @@ The `Morse Code Watch` is quite simply a watch that tells you the time in morse 
     <img width="60%" src="./images/morse_code_watch_vibrating.gif" />
 </p>
 
-![](./images/morse_code_watch_3d_top.png) ![](./images/morse_code_watch_bottom.png)
+
+<p align="middle">
+  <img src="./images/morse_code_watch_3d_top.png" height="250px" />
+  <img src="./images/morse_code_watch_3d_bottom.png" height="250px" />
+</p>
+
+![](./images/morse_code_watch_populated_board.jpg)
+
+<p align="middle">
+  <img src="./images/morse_code_watch_body_top.png" height="250px" />
+  <img src="./images/morse_code_watch_body_bottom.png" height="250px" />
+</p>
 
 
 ## Block Diagram
