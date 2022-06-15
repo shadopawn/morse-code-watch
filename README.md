@@ -32,7 +32,9 @@ This dependency can be added via Arduino's library manager follow this [guide](h
 - [Tiny AVR Programmer Hookup](https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all)
 - [Software Serial on Attiny85](https://jloh02.github.io/projects/connecting-attiny85-serial-monitor/)
 
-## Attiny85
+## μController Pinout
+
+Specifically this project uses an ATtiny85 as its μController.
 
 ![Attiny85 pinout](./images/attiny85_pinout.jpeg)
 
