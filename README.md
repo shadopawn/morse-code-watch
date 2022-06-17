@@ -19,7 +19,7 @@ The `Morse Code Watch` is quite simply a watch that tells you the time in morse 
 
 <p align="middle">
     <img src="./images/morse_code_watch_3d_top.png" height="300px" />
-    <img src="./images/morse_code_watch_3d_bottom.png" height="300px" />
+    <img src="./images/morse_code_watch_bottom.png" height="300px" />
 </p>
 
 ![](./images/morse_code_watch_populated_board.jpg)
